@@ -24,3 +24,12 @@ git remote add origin https://github.com/minjun91a/devmin.git
 
 # 기본 브랜치 이름 변경
 git branch -M main
+
+# push
+git push -u origin main
+
+# 글로벌 저장소 이름 변경
+git config --global user.name "새로운 사용자 이름"
+
+# 이메일 주소 변경
+git config --global user.email "새로운 이메일"
