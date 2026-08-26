@@ -7,3 +7,12 @@ git init
 # git add [원하는 파일]
 git add readme.md
 git add . => 변경사항 모두
+
+# 상태 확인
+git status
+
+# commit 하기
+git commit -m "첫번째 커밋"
+
+# commit 의 상태 확인
+git log --graph --oneline --all
