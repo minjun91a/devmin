@@ -18,7 +18,7 @@ router.get('/get/:id', (req, res) => {
 });
 
 // 회원정보 수정 (/member/update/:id)
-router.put('/updata/:id', (req, res) => {
+router.put('/update/:id', (req, res) => {
     const {id} = req.params;
     res.json({'success':true, 'data':{'id':id, 'msg':'수정 완료'}});
 });
