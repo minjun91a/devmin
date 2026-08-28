@@ -19,7 +19,7 @@ app.post('/login', (req, res) => {
     // token 생성(payload, key, expire)
     // 1s, 1m, 1h, 1d, 1w, 1y, 1.5h(소수점도 가능)
     const token = jwt.sign({id, pw}, KEY, {expiresIn: '30m'});
-    res.json({'success': true, 'token': token});
+    return res.json({'success': true, 'token': token});
 });
 
 app.post('/check', (req, res) => {
@@ -27,17 +27,18 @@ app.post('/check', (req, res) => {
     console.log('headers', headers);
     const token = headers.authorization;
     if (token == null) {
-        res.json({'loginYN': false, 'msg': '토큰이 없습니다.'});
+        return res.json({'loginYN': false, 'msg': '토큰이 없습니다.'});
     }
+    console.log('test....');
 
     try {
         const info = jwt.verify(token, KEY);
         console.log('info', info);
         // 요청했던 일을 한다.
-        res.json({'loginYN': true, 'data': '추가작업 결과'});
+        return res.json({'loginYN': true, 'data': '추가작업 결과'});
     } catch (e) {
         // 만료된 토큰이라면 에러가 발생한다.
-        res.json({'loginYN': false, 'msg': '유효하지 않은 토큰 입니다.'})
+        return res.json({'loginYN': false, 'msg': '유효하지 않은 토큰 입니다.'})
     }
 });
 
