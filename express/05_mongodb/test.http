@@ -19,7 +19,7 @@ Content-Type: application/json
   "pw": "admin@pass",
   "name": "관리자",
   "phone": "010-1234-1234",
-  "grade": "admin"
+  "grade": "user"
 }
 
 ### 1. 회원 등록3
@@ -57,8 +57,8 @@ PUT http://localhost/member/update/admin
 Content-Type: application/json
 
 {
-  "name": "수정된 이름",
-  "phone": "010-9876-9876"
+  "name": "관리자(수정된 이름)",
+  "grade": "admin"
 }
 
 ### 5. 회원 삭제
